@@ -15,11 +15,11 @@ class SitemapServiceProviderTest extends \PHPUnit_Framework_TestCase
         }
 
         $app = new Application();
-        $app->register(new \KEIII\SilexSitemap\SitemapServiceProvider(), [
+        $app->register(new \KEIII\SilexSitemap\SitemapServiceProvider(), array(
             'sitemap.domain' => 'http://example.com',
             'sitemap.path' => $dir,
             'sitemap.loc' => 'http://example.com/',
-        ]);
+        ));
         /** @var \KEIII\SilexSitemap\Sitemap $sitemap */
         $sitemap = $app['sitemap'];
         $item = new \KEIII\SilexSitemap\SitemapItem();

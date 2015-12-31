@@ -16,11 +16,11 @@ composer require keiii/silex-sitemap
 require_once __DIR__.'/vendor/autoload.php';
 
 $app = new \Silex\Application();
-$app->register(new \KEIII\SilexSitemap\SitemapServiceProvider(), [
+$app->register(new \KEIII\SilexSitemap\SitemapServiceProvider(), array(
     'sitemap.domain' => 'http://example.com',
     'sitemap.path' => __DIR__,
     'sitemap.loc' => 'http://example.com/',
-]);
+));
 
 /** @var \KEIII\SilexSitemap\Sitemap $sitemap */
 $sitemap = $app['sitemap'];
