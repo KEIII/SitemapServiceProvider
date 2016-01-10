@@ -14,9 +14,6 @@
         "silex/silex": "^1.3",
         "evert/sitemap-php": "^1.2"
     },
-    "require-dev": {
-        "phpunit/phpunit": "^4.1"
-    },
     "autoload": {
         "psr-4": {
             "KEIII\\SilexSitemap\\": "src"
