@@ -1,6 +1,6 @@
 # SitemapServiceProvider for Silex
 
-[![Build Status](https://travis-ci.org/KEIII/SitemapServiceProvider.svg)](https://travis-ci.org/KEIII/SitemapServiceProvider)
+[![Build Status](https://travis-ci.org/KEIII/SitemapServiceProvider.svg?branch=master)](https://travis-ci.org/KEIII/SitemapServiceProvider)
 
 Provides [sitemap-php](https://github.com/evert/sitemap-php) service for Silex microframework.
 
