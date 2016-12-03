@@ -43,6 +43,7 @@ class SitemapItem
     public function setLoc($loc)
     {
         $this->loc = mb_substr((string)$loc, 0, 2048, 'UTF-8');
+        return $this;
     }
 
     /**
@@ -63,6 +64,7 @@ class SitemapItem
         }
 
         $this->priority = (float)$priority;
+        return $this;
     }
 
     /**
@@ -80,6 +82,7 @@ class SitemapItem
     {
         $available = array('always', 'hourly', 'daily', 'weekly', 'monthly', 'yearly', 'never');
         $this->changefreq = in_array($changefreq, $available) ? $changefreq : $available[0];
+        return $this;
     }
 
     /**
@@ -98,5 +101,6 @@ class SitemapItem
     public function setLastmod(\DateTime $lastmod)
     {
         $this->lastmod = $lastmod;
+        return $this;
     }
 }
