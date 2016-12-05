@@ -22,11 +22,12 @@ class SitemapServiceProviderTest extends \PHPUnit_Framework_TestCase
         ));
         /** @var \KEIII\SilexSitemap\Sitemap $sitemap */
         $sitemap = $app['sitemap'];
-        $item = new \KEIII\SilexSitemap\SitemapItem();
-        $item->setLoc('/');
-        $item->setPriority(1.0);
-        $item->setChangefreq('daily');
-        $item->setLastmod(DateTime::createFromFormat('Y-m-d', '2016-01-02', new DateTimeZone('UTC')));
+        $item = (new \KEIII\SilexSitemap\SitemapItem())
+            ->setLoc('/')
+            ->setPriority(1.0)
+            ->setChangefreq('daily')
+            ->setLastmod(DateTime::createFromFormat('Y-m-d', '2016-01-02', new DateTimeZone('UTC')))
+        ;
         $sitemap->addItem($item);
         $sitemap->create();
 
@@ -44,6 +45,6 @@ EOT;
         $actual = trim((string)file_get_contents($dir.'/sitemap.xml'));
         exec(sprintf('rm -rf %s', $dir));
 
-        $this->assertEquals($expected, $actual);
+        self::assertEquals($expected, $actual);
     }
 }

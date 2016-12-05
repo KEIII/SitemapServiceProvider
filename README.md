@@ -26,11 +26,12 @@ $app->register(new \KEIII\SilexSitemap\SitemapServiceProvider(), array(
 $sitemap = $app['sitemap'];
 
 for ($i = 0; $i < 51000; $i++) {
-    $item = new \KEIII\SilexSitemap\SitemapItem();
-    $item->setLoc('/');
-    $item->setPriority(1.0);
-    $item->setChangefreq('daily');
-    $item->setLastmod(new \DateTime());
+    $item = (new \KEIII\SilexSitemap\SitemapItem())
+        ->setLoc('/')
+        ->setPriority(1.0)
+        ->setChangefreq('daily')
+        ->setLastmod(new \DateTime())
+    ;
     $sitemap->addItem($item);
 }
 
