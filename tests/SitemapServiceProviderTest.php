@@ -22,7 +22,8 @@ class SitemapServiceProviderTest extends \PHPUnit_Framework_TestCase
         ));
         /** @var \KEIII\SilexSitemap\Sitemap $sitemap */
         $sitemap = $app['sitemap'];
-        $item = (new \KEIII\SilexSitemap\SitemapItem())
+        $item = new \KEIII\SilexSitemap\SitemapItem();
+        $item
             ->setLoc('/')
             ->setPriority(1.0)
             ->setChangefreq('daily')
