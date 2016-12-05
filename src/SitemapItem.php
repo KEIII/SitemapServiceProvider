@@ -39,10 +39,13 @@ class SitemapItem
 
     /**
      * @param string $loc
+     * @return $this
      */
     public function setLoc($loc)
     {
         $this->loc = mb_substr((string)$loc, 0, 2048, 'UTF-8');
+        
+        return $this;
     }
 
     /**
@@ -55,6 +58,7 @@ class SitemapItem
 
     /**
      * @param float $priority
+     * @return $this
      */
     public function setPriority($priority)
     {
@@ -63,6 +67,8 @@ class SitemapItem
         }
 
         $this->priority = (float)$priority;
+        
+        return $this;
     }
 
     /**
@@ -75,11 +81,14 @@ class SitemapItem
 
     /**
      * @param string $changefreq
+     * @return $this
      */
     public function setChangefreq($changefreq)
     {
         $available = array('always', 'hourly', 'daily', 'weekly', 'monthly', 'yearly', 'never');
         $this->changefreq = in_array($changefreq, $available) ? $changefreq : $available[0];
+        
+        return $this;
     }
 
     /**
@@ -94,9 +103,12 @@ class SitemapItem
 
     /**
      * @param \DateTime $lastmod
+     * @return $this
      */
     public function setLastmod(\DateTime $lastmod)
     {
         $this->lastmod = $lastmod;
+        
+        return $this;
     }
 }
